@@ -1,4 +1,4 @@
 # dependencies
-/node_modules
-/.expo
-/backup
+node_modules
+.expo
+backup
