@@ -50,7 +50,7 @@ export default function App() {
         style={styles.image}
       >
         <Overlay isVisible={visible} onBackdropPress={toggleOverlay} overlayStyle={{padding:0}}>
-          <Chart database={database}></Chart>
+          <Chart database={database} setDatabase={setDatabase}></Chart>
         </Overlay>
 
         <Text style={styles.heading}>nammi eller æsje?</Text>

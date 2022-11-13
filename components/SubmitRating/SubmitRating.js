@@ -1,7 +1,8 @@
 import { View, Text, TouchableOpacity} from 'react-native'
 import styles from './SubmitRating.component.style.js'
+import { saveToLocal} from '../../utils/localStorageHandler.js'
 
-function SubmitRating({rating, setRating, database, setDatabase, setVisible}) {
+function SubmitRating({rating, setRating, database, setDatabase}) {
 
   const values = {
     '⛈️':1,
@@ -20,7 +21,7 @@ function SubmitRating({rating, setRating, database, setDatabase, setVisible}) {
     const updatedDb = database;
     updatedDb.push(entry);
     setDatabase(updatedDb);
-    console.log('db', database)
+    saveToLocal(updatedDb);
     setRating('');
   }
 
