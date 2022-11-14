@@ -1,8 +1,11 @@
 import { View, Text, TouchableOpacity} from 'react-native'
 import styles from './SubmitRating.component.style.js'
 import { saveToLocal} from '../../utils/localStorageHandler.js'
+import { clearAll } from '../../utils/localStorageHandler'
 
 function SubmitRating({rating, setRating, database, setDatabase}) {
+
+  // clearAll();
 
   const values = {
     '⛈️':1,

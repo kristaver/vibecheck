@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Image, View, TouchableOpacity } from 'react-native'
 import styles from './showChart.component.style'
-function ShowChart({toggleOverlay, database}) {
 
-  const [pressed, setPressed] = useState(false)
+function ShowChart({toggleOverlay, statVisible}) {
 
-  if(database.length === 0) {
+  if(!statVisible) {
     return(
       <View style={styles.placeholder} />
     )

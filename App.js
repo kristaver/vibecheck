@@ -7,6 +7,7 @@ import styles from './styles/App.component.style.js';
 import SubmitRating from './components/SubmitRating/SubmitRating.js';
 import Chart from './components/Chart/Chart.js';
 import ShowChart from './components/ShowChart/ShowChart.js';
+import { readFromLocal } from './utils/localStorageHandler.js';
 
 export default function App() {
   const backgroundImage = require('./assets/bg.png');
@@ -20,13 +21,25 @@ export default function App() {
   const [statVisible, setStatVisible] = useState(false);
 
   useEffect(() => {
-    if (database.length === 0) {
-      return;
-    } else {
-      setStatVisible(true);
-    }
-  }, [database])
+    readFromLocal()
+      .then((res) => {
+        setDatabase(res);
+      })
+      .then(() => {
+        (database.length === 0)
+        ? undefined
+        : setStatVisible(true);
+      })
+      .catch((e)=>console.log(e));
+    }, []);
 
+    useEffect(() => {
+      console.log('database subscribed hook called')
+      if(database.length > 0) {
+      setStatVisible(true);
+      }
+    }, [database])
+    
 
   const [fontsLoaded] = useFonts(customFonts)
   const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -54,7 +67,7 @@ export default function App() {
         </Overlay>
 
         <Text style={styles.heading}>nammi eller æsje?</Text>
-        <ShowChart toggleOverlay={toggleOverlay} database={database} />
+        <ShowChart toggleOverlay={toggleOverlay} statVisible={statVisible}/>
 
         <View style={styles.main}>
         <Text style={styles.prompt}>korleis er dagen så langt?</Text>

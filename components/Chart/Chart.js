@@ -1,27 +1,27 @@
 import { React, useState, useEffect } from 'react'
 import { Dimensions, View, Text } from 'react-native'
 import { LineChart } from 'react-native-chart-kit'
-import { readFromLocal } from '../../utils/localStorageHandler'
 import { dataToChart } from '../../utils/dataToChart'
 
 function Chart({database}) {
-  // TODO: fix async loading sceen
   const [isLoading, setIsLoading] = useState(true);
-  let data;
-useEffect(() => {
-    data = dataToChart(database);
-    setIsLoading(false);
-  }, [])
+  const [chartData, setChartData] = useState({})
 
-  if (isLoading || !data) {
+  useEffect(() => {
+      const data = dataToChart(database);
+      setChartData(data)
+      setIsLoading(false);
+    }, [])
+
+  if (isLoading) {
     return <View><Text>Loading...</Text></View>;
   } else {
-    console.log('data before render:', data)
+    console.log('data before render:', chartData)
     return (
       <View>
-        <Text>{JSON.stringify(data)}</Text>
+        <Text>{JSON.stringify(chartData)}</Text>
         <LineChart
-          data={data}
+          data={chartData}
           width={Dimensions.get("window").width}
           height={220}
           yAxisLabel=""
