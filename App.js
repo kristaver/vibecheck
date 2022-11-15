@@ -30,6 +30,7 @@ export default function App() {
     }, []);
 
     useEffect(() => {
+      console.log('database subscription called');
       (database.length > 0) && setStatVisible(true)
     }, [database])
     

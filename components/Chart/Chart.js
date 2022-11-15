@@ -16,7 +16,6 @@ function Chart({database}) {
   if (isLoading) {
     return <View><Text>Loading...</Text></View>;
   } else {
-    console.log('data before render:', chartData)
     return (
       <View>
         <Text>{JSON.stringify(chartData)}</Text>
