@@ -21,10 +21,9 @@ function SubmitRating({rating, setRating, database, setDatabase}) {
       time: `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
       value: values[rating]
     }
-    const updatedDb = database;
-    updatedDb.push(entry);
-    setDatabase(updatedDb);
-    saveToLocal(updatedDb);
+    const newDatabase = database
+    newDatabase.push(entry)
+    saveToLocal(newDatabase);
     setRating('');
   }
 

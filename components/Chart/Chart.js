@@ -8,10 +8,10 @@ function Chart({database}) {
   const [chartData, setChartData] = useState({})
 
   useEffect(() => {
-      const data = dataToChart(database);
-      setChartData(data)
-      setIsLoading(false);
-    }, [])
+    setChartData(dataToChart(database))
+    setIsLoading(false);
+  }, [])
+  
 
   if (isLoading) {
     return <View><Text>Loading...</Text></View>;

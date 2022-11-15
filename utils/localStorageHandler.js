@@ -15,6 +15,7 @@ export const saveToLocal = async(database) => {
 export const readFromLocal = async() => {
   try {
     const res = await AsyncStorage.getItem('@database');
+    console.log('read from local storage', res)
     return res != null ? JSON.parse(res) : []
   } catch (error) {
     console.log('error reading db:', error)

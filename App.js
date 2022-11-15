@@ -21,24 +21,18 @@ export default function App() {
   const [statVisible, setStatVisible] = useState(false);
 
   useEffect(() => {
+    console.log('app useffect local fetch called')
     readFromLocal()
       .then((res) => {
         setDatabase(res);
-      })
-      .then(() => {
-        (database.length === 0)
-        ? undefined
-        : setStatVisible(true);
       })
       .catch((e)=>console.log(e));
     }, []);
 
     useEffect(() => {
-      console.log('database subscribed hook called')
-      if(database.length > 0) {
-      setStatVisible(true);
-      }
+      (database.length > 0) && setStatVisible(true)
     }, [database])
+    
     
 
   const [fontsLoaded] = useFonts(customFonts)
@@ -68,7 +62,6 @@ export default function App() {
 
         <Text style={styles.heading}>nammi eller æsje?</Text>
         <ShowChart toggleOverlay={toggleOverlay} statVisible={statVisible}/>
-
         <View style={styles.main}>
         <Text style={styles.prompt}>korleis er dagen så langt?</Text>
           <View  style={styles.scale}>
