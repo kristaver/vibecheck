@@ -2,7 +2,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from './screens/HomeScreen';
-import Chart from './components/Chart/Chart'
+import ChartScreen from './screens/ChartScreen'
+
 
 export default function App() {
 
@@ -18,7 +19,7 @@ export default function App() {
         />
         <Stack.Screen
           name = 'Statistics'
-          component={Chart}
+          component={ChartScreen}
           options={{ title: 'statistics for u :>'}}
         />
       </Stack.Navigator>

@@ -1,16 +1,22 @@
 import React from 'react'
-import { View, ImageBackground} from 'react-native'
-import StatButton from '../components/StatButton/StatButton'
+import { View, Button} from 'react-native'
 import styles from '../styles/App.component.style'
 import Chart from '../components/Chart/Chart'
+import { scheduleNotificationAsync } from 'expo-notifications'
+import NotifTest from '../components/NotifTest'
 
 function ChartScreen({ navigation }) {
-  const backgroundImage = require('../assets/bg.png')
+  const sendNotif = () => {
+    console.log('jad')
+    scheduleNotificationAsync()
+  }
   
   return (
-    <View style={styles.container}>
-      <Chart/>
-    </View>
+      <View style={styles.container}>
+        <Chart/>
+        {/* <Button title="notsdfif" onPress={sendNotif}/> */}
+        <NotifTest />
+      </View>
   )
 }
 
