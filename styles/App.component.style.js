@@ -51,16 +51,6 @@ export default EStyleSheet.create({
     fontFamily: 'Courier New',
     marginBottom: 20,
   },
-  scale: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    textAlign: 'center',
-    paddingRight: 20,
-    paddingLeft: 20,
-    maxHeight: 60,
-    marginBottom: 20,
-  },
   icons: {
     fontSize: 50,
   },

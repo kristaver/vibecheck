@@ -3,13 +3,13 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import SubmitRating from '../SubmitRating/SubmitRating'
 import styles from './rating.component.style'
 
-function Rating() {
+function Rating({font}) {
   const [rating, setRating] = useState('');
 
   return (
-    <View style={styles.main}>
-      <Text style={styles.prompt}>korleis er dagen så langt?</Text>
-        <View  style={styles.scale}>
+    <View style={styles.container}>
+      <Text style={styles.prompt}>vibe rn: </Text>
+        <View style={styles.scale}>
           <TouchableOpacity onPress={() => setRating('⛈️')}>
             <Text style={styles.icons}>⛈️</Text>
           </TouchableOpacity>
@@ -28,7 +28,7 @@ function Rating() {
       </View>
 
       <View style={styles.submitContainer}>
-            <SubmitRating rating={rating} setRating={setRating} />
+        <SubmitRating rating={rating} setRating={setRating} />
       </View>
 
     </View>

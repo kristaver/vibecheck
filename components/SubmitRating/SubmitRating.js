@@ -5,8 +5,6 @@ import { clearAll } from '../../utils/localStorageHandler'
 
 function SubmitRating({rating, setRating, database, setDatabase}) {
 
-  // clearAll();
-
   const values = {
     '⛈️':1,
     '🌧️':2,
