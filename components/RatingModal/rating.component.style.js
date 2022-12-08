@@ -8,7 +8,7 @@ export default EStyleSheet.create({
     justifyContent: 'flex-end',
   },
   modalContent: {
-    height: "50%",
+    height: "45%",
     width: '100%', 
     backgroundColor:"#fff", 
     justifyContent:"center",
@@ -46,6 +46,7 @@ export default EStyleSheet.create({
     backgroundColor: '$mainSalmon',
     marginLeft:20,
     marginRight: 20,
+    marginVertical: 20,
   },
   buttonText: {
     fontSize: 16,

@@ -34,7 +34,7 @@ function RatingModal({ navigation }) {
       <View style={styles.submitContainer}>
         <SubmitRating rating={rating} setRating={setRating} navigation={navigation} />
         <TouchableOpacity style={styles.button} onPress={()=>navigation.goBack()}>
-            <Text style={styles.buttonText}>nej, vil ikkje</Text> 
+            <Text style={styles.buttonText}>nej, eg angrar</Text> 
           </TouchableOpacity>
       </View>
 

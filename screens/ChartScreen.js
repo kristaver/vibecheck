@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { StateContext } from '../App'
 import { View, Button} from 'react-native'
-import styles from '../styles/App.component.style'
+import styles from '../styles/ChartScreen.component.style'
 import Chart from '../components/Chart/Chart'
 import { scheduleNotificationAsync } from 'expo-notifications'
-import NotifTest from '../components/NotifTest'
+import Notifications from '../NotificationUtil'
 
 function ChartScreen({ navigation, children }) {
   const sendNotif = () => {
@@ -16,8 +16,13 @@ function ChartScreen({ navigation, children }) {
   return (
       <View style={styles.container}>
         <Chart/>
-        <NotifTest />
-        
+        <Button
+        title="hjelp, dette vart for real"
+        onPress={() => {
+          navigation.navigate('Home')
+        }}
+      />
+        <Notifications />
       </View>
   )
 }

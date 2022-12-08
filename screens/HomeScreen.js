@@ -21,19 +21,21 @@ function HomeScreen({ navigation }) {
         >
         <Text style={styles.heading}>vibecheck</Text>
 
-        <View style={styles.menu}>
-        <TouchableOpacity>
-          <Text>meld vibe</Text>
+        <View style={styles.menuContainer}>
+        <TouchableOpacity onPress={()=>navigation.navigate('RatingModal')}>
+          <Text style={styles.menuLink}>meld vibe</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
-          <Text>gi meg stats</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('Statistics')}>
+          <Text style={styles.menuLink}>gi meg stats</Text>
         </TouchableOpacity>
         </View>
-
-
-        <View style={styles.footer}>
-          <StatButton navigation={navigation}/>
-        </View>
+        <Text style={{
+          marginBottom: 100,
+          marginHorizontal: 30,
+          fontFamily: 'Courier New',
+        }}>
+          grafikk:{'\n'}august 'bestie' hagen
+        </Text>
       </ImageBackground>
     </View>
   )

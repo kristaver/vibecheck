@@ -15,7 +15,7 @@ const randomNotificationTime = () => {
   return 2;
 }
 
-export default function NotifTest() {
+export default function NotificationUtil() {
   const [expoPushToken, setExpoPushToken] = useState('');
   const [notification, setNotification] = useState(false);
   const notificationListener = useRef();
