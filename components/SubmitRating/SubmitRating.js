@@ -3,7 +3,7 @@ import styles from './SubmitRating.component.style.js'
 import { saveToLocal} from '../../utils/localStorageHandler.js'
 import { clearAll } from '../../utils/localStorageHandler'
 
-function SubmitRating({rating, setRating, database, setDatabase}) {
+function SubmitRating({rating, setRating, database, setDatabase, navigation}) {
 
   const values = {
     '⛈️':1,
@@ -15,6 +15,7 @@ function SubmitRating({rating, setRating, database, setDatabase}) {
 
   const handleSubmit = () => {
     console.log('fix submit here')
+    navigation.goBack()
   }
 
   if(rating) {

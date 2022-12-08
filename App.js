@@ -4,6 +4,7 @@ import { useFonts } from 'expo-font'
 import { createContext, useContext } from 'react';
 import HomeScreen from './screens/HomeScreen';
 import ChartScreen from './screens/ChartScreen'
+import RatingModal from './components/RatingModal';
 
 
 export const StateContext = createContext([])
@@ -24,17 +25,30 @@ export default function App() {
   return (
     <StateContext.Provider value={[0, 1, 2]}>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown:false
+          }}
+        >
+          <Stack.Group>
+            <Stack.Screen
+              name='Home'
+              component={HomeScreen}
+              />
+            <Stack.Screen
+              name = 'Statistics'
+              component={ChartScreen}
+              />
+            </Stack.Group>
+
+        <Stack.Group>
           <Stack.Screen
-            name='Home'
-            component={HomeScreen}
-            options={{ title: 'welcome to the app bestie' }}
-          />
-          <Stack.Screen
-            name = 'Statistics'
-            component={ChartScreen}
-            options={{ title: 'statistics for u :>'}}
-          />
+            name='RatingModal'
+            component={RatingModal}
+            options={{presentation: 'transparentModal'}}
+            />
+        </Stack.Group>
+
         </Stack.Navigator>
       </NavigationContainer>
     </StateContext.Provider>

@@ -11,22 +11,14 @@ function ChartScreen({ navigation, children }) {
     console.log('jad')
     scheduleNotificationAsync()
   }
-  const state = useContext(StateContext)
-  console.log(state)
+
   
   return (
-    <StateContext.Provider value={state}>
       <View style={styles.container}>
         <Chart/>
-        {/* <Button title="notsdfif" onPress={sendNotif}/> */}
         <NotifTest />
         
-        <Button>
-          {console.log(state, chilren)}
-          busttt
-        </Button>
       </View>
-    </StateContext.Provider>
   )
 }
 

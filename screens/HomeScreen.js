@@ -1,11 +1,16 @@
-import React from 'react'
-import { View, ImageBackground, Text } from 'react-native'
+import React, { useEffect } from 'react'
+import { View, ImageBackground, Text, TouchableOpacity } from 'react-native'
 import StatButton from '../components/StatButton/StatButton'
 import Rating from '../components/Rating'
-import styles from '../styles/App.component.style'
+import styles from '../styles/HomeScreen.component.styles'
 
 function HomeScreen({ navigation }) {
   const backgroundImage = require('../assets/bg.png')
+
+  useEffect(() => {
+    return navigation.navigate('RatingModal')
+  }, [])
+  
 
   return (
     <View style={styles.container}>
@@ -15,7 +20,17 @@ function HomeScreen({ navigation }) {
         resizeMode="cover"
         >
         <Text style={styles.heading}>vibecheck</Text>
-        <Rating />
+
+        <View style={styles.menu}>
+        <TouchableOpacity>
+          <Text>meld vibe</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text>gi meg stats</Text>
+        </TouchableOpacity>
+        </View>
+
+
         <View style={styles.footer}>
           <StatButton navigation={navigation}/>
         </View>
