@@ -5,6 +5,7 @@ import { createContext, useContext } from 'react';
 import HomeScreen from './screens/HomeScreen';
 import ChartScreen from './screens/ChartScreen'
 import RatingModal from './components/RatingModal';
+import styles from './styles/App.component.style'
 
 
 export const StateContext = createContext([])

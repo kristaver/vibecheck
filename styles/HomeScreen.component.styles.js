@@ -1,5 +1,15 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
 
+EStyleSheet.build({
+  $mainSalmon: '#bf847e',
+  $mainOverlay: '#f0f0f080',
+  $mainGrey: '#101010',
+  $mainLightGrey: 'grey',
+  $mainBlack: '#010101',
+  $mainWhite: '#ffffff',
+});
+
+
 export default EStyleSheet.create({
   container: {
     flex: 1,
